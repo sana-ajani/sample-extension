@@ -1,0 +1,47 @@
+{
+    "name": "sample-extension-123",
+    "displayName": "Sample Extension 123",
+    "description": "Sample Extension",
+    "version": "0.0.1",
+    "publisher": "Test123",
+    "engines": {
+        "vscode": "^1.27.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*"
+    ],
+    "main": "./out/extension",
+    "contributes": {
+        "views": {
+            "explorer": [
+                {
+                    "id": "taskOutline",
+                    "name": "Task Runner"
+                }
+            ]
+        },
+        "commands": [
+            {
+                "command": "taskOutline.executeTask",
+                "title": "Execute"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "devDependencies": {
+        "typescript": "^2.6.1",
+        "vscode": "^1.1.21",
+        "tslint": "^5.8.0",
+        "@types/node": "^8.10.25",
+        "@types/mocha": "^2.2.42"
+    }
+}
